@@ -1,0 +1,70 @@
+<div class="sidebar">
+    <div class="sidebar-brand">
+        <h2><span class="lab la-accusoft"></span><span>Vision-Smart</span></h2>
+    </div>
+    <div class="sidebar-menu">
+        <ul>
+            <li>
+                <a href="/Admin Dashboard" class="active"><span class="las la-igloo"></span>
+                    <span>Dashboard</span></a>
+            </li>
+            <li>
+                <a href="#"><span class="las la-users"></span>
+                    <span>New Request</span></a>
+                <ul>
+                    <li>
+                        <a href="/addfaculty"><span class="las la-user-plus"></span>
+                            <span>Faculty</span></a>
+                    </li>
+                    <li>
+                        <a href="/addStudent"><span class="las la-user-plus"></span>
+                            <span>Student</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><span class="las la-user-shield"></span>
+                    <span>Active Member</span></a>
+                    <ul>
+                        <li>
+                            <a href="/viewFaculty"><span class="las la-user-shield"></span>
+                                <span>Faculty</span></a>
+                        </li>
+                        <li>
+                            <a href="/viewStudent"><span class="las la-user-shield"></span>
+                                <span>Student</span></a>
+                        </li>
+                    </ul>
+            </li>
+            <li>
+                <a href="/timetable"><i class="las la-calendar-alt"></i>
+                    <span style="margin-left: 20px;">Time Table</span></a>
+            </li>
+            <li>
+                <a href="/"><i class="fas fa-sign-out-alt"></i>
+                    <span style="margin-left: 20px;">Log Out</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function setActiveLink(clickedLink) {
+        // Remove the "active" class from all links
+        var links = document.querySelectorAll('#sidebar-list a');
+        links.forEach(function(link) {
+            link.classList.remove('active');
+        });
+
+        // Add the "active" class to the clicked link
+        clickedLink.classList.add('active');
+    }
+
+    // Add a click event listener to each sidebar link
+    var links = document.querySelectorAll('#sidebar-list a');
+    links.forEach(function(link) {
+        link.addEventListener('click', function() {
+            setActiveLink(link);
+        });
+    });
+</script>

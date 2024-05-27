@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/Loginstyles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form method="post">
+        <h1>Admin Login</h1>
+
+        <div class="input-box">
+          <input type="text" placeholder="Username" name="admin_id" required />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" name="password" required />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+
+        <div class="remember-forgot">
+          <label><input type="checkbox" /> Remember me</label>
+        </div>
+
+        <button type="submit" value="Login" class="btn">Login</button>
+
+        <div class="register-link">
+          <p><a href="/">Go to Home</a></p></div>
+      </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+  <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const flashes = document.querySelector('.flashes');
+            if (flashes) {
+                const flashMessages = flashes.querySelectorAll('li');
+                if (flashMessages.length > 0) {
+                    flashMessages.forEach(message => {
+                        alert(message.textContent);
+                    });
+                }
+            }
+        });
+    </script>
+    </div>
+  </body>
+</html>

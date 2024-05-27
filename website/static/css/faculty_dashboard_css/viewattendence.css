@@ -1,0 +1,56 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family:'poppins', sans-serif;
+}
+body{
+  background-color: #151e24;
+  color: antiquewhite;
+  height: 100vh;
+}
+.container{
+  height: 100%;
+}
+.student-details{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(40, 40, 59);
+  box-shadow: -1px 0px 10px 1px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 1.8rem;
+}
+.details{
+  font-weight: 700;
+  color: steelblue;
+}
+.details-value{
+  display: flex;
+}
+.hp{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.3rem;
+}
+.check-attendence{
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  justify-content: center;
+  margin-top: 5rem;
+}
+table{
+  width: 65%;
+  box-shadow: -1px 0px 10px 1px rgb(43, 43, 87); 
+  height: 50vh;
+}
+table td:hover{
+  background-color: aliceblue;
+  color: #151e24;
+}
+.student-img img{
+  height: 16vh;
+  width: 8vw;
+  border-radius: 50%;
+}

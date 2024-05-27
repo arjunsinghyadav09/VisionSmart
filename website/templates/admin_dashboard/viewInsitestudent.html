@@ -1,0 +1,131 @@
+<!-- ACTIVE MEMBERS ME STUDENT  CODE KE ANDR VIEW WALA CODE H-->
+<!-- ACTIVE MEMBER -> VIEW FOR STUDENT  -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!--Get your own code at fontawesome.com-->
+    <link rel="stylesheet" href="static/css/admin_dashboard_css/viewTablefacultystyle.css">
+    <script src="static/js/admin_dashboard_js/script.js"></script>
+
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle">
+   {% include 'admin_dashboard/sidebar_template.html' %}
+ <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                Dashboard
+            </h2>
+        </header>
+      
+                    <!-- <button>See all<span class="las la-arrow-right"></span></button> -->
+                        <div class="form-container">
+                          <div class="form-title">Student Details</div>
+                          <table style="width:100%">
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        Full Name :
+                                    </td>
+                                    <td>
+                                        {{data_s.fullName}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       Father's Name:
+                                    </td>
+                                    <td>
+                                        {{data_s.FatherName}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        Course:
+                                    </td>
+                                    <td id>
+                                        {{data_s.Course}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Branch :
+                                    </td>
+                                    <td>
+                                       {{data_s.Branch}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Year
+                                    </td>
+                                    <td>
+                                        {{data_s.Year}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        DOB
+                                    </td>
+                                    <td>
+                                       {{data_s.DOB}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Email
+                                    </td>
+                                    <td>
+                                        {{data_s.email_id}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Contact Number
+                                    </td>
+                                    <td>
+                                        {{data_s.PhoneNumber}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Gender
+                                    </td>
+                                    <td>
+                                       {{data_s.gender}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Student ID
+                                    </td>
+                                    <td>
+                                       {{data_s.StudentID}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Uploaded Photo
+                                    </td>
+                                    <td id="uploaded-img">
+<img id="join-image-preview" class="circular-img" src="{{ url_for('static', filename='uploaded/' + data_s.img) }}"  alt="StudentImage">                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>  
+                    </div>
+                    <footer>
+                        <!-- footer -->
+                    </footer> 
+<script src="https://kit.fontawesome.com/09ae4bf049.js" crossorigin="anonymous"></script>
+</body>
+</html>

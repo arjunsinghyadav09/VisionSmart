@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Registration Form</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+    <link rel="stylesheet" href="static/css/styleFaculty.css" />
+    <script src="registerfaculty.js"></script>
+  </head>
+  <body>
+    <div class="container glass">
+      <h1 class="form-title">Registration For Faculty</h1>
+      <form action="#" method="post" class="bbq3" enctype = multipart/form-data>
+          <div class="form-flash-messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <!-- <h2 style="padding: 10px;">Qualification Details</h2> -->
+<div class="main-user-info">
+        <div class="user-input-box">
+            <label for="facultyId">Faculty ID</label>
+            <input type="text"
+                    id="facultyId"
+                    name="facultyId"
+                    placeholder="Enter Faculty ID" required/>
+          </div>
+          <div class="user-input-box" style="justify-content: end; margin-left: 55px;">
+            <label for="degree">Degree</label>
+            <input type="text"
+                    id="degree"
+                    name="degree"
+                    placeholder="Enter your highest Qualification" required/>
+          </div>
+          <div class="user-input-box">
+            <label for="specialization">Specialization</label>
+            <input type="text"
+                    id="specialization"
+                    name="specialization"
+                    placeholder="Enter Specialization" required/>
+          </div>
+          <div class="user-input-box" style="justify-content: end; margin-left: 55px;">
+            <label for="Experience">Experience</label>
+            <input type="text"
+                    id="Experience"
+                    name="Experience"
+                    placeholder="Enter Experience in Years" required/>
+          </div>
+
+
+        <!-- <h2>Basic Information</h2> -->
+
+          <div class="user-input-box">
+            <label for="fullName">Full Name</label>
+            <input type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter Full Name" required/>
+          </div>
+           <div class="user-input-box">
+          <label for="gender" id="gender-name">Gender </label>
+          <select name="gender" id="gender" required>
+            <option value="Male" class="gender-value">Male</option>
+            <option value="Female" class="gender-value">Female</option>
+            <option value="others" class="gender-value">Other</option>
+          </select>
+          </div>
+
+          <div class="user-input-box">
+            <label for="Occupation">Current Post</label>
+            <input type="text"
+                    id="Occupation"
+                    name="Occupation"
+                    placeholder="Enter post" required/>
+          </div>
+          <div class="user-input-box">
+            <label for="department">Department</label>
+            <input type="text"
+                    id="department"
+                    name="department"
+                    placeholder="Enter Department" required/>
+          </div>
+
+          <div class="user-input-box">
+            <label for="Year">Year of Joining</label>
+            <input type="text"
+                    id="Year"
+                    name="Year"
+                    placeholder="Enter Year" required/>
+          </div>
+
+          <div class="user-input-box">
+            <label for="ContactNumber">Contact Number</label>
+            <input type="text"
+                    id="ContactNumber"
+                    name="ContactNumber"
+                    placeholder="Enter Contact Number" required/>
+          </div>
+          <div class="user-input-box">
+            <label for="DOB">Date Of Birth</label>
+            <input type="date"
+                    id="DOB"
+                    name="DOB"
+                    placeholder="Enter Date Of Birth" required/>
+          </div>
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email" required/>
+          </div>
+
+        </div>
+        <div class="image-Insert">
+
+                <img src="static/img/download1.png" id="profile-pic">
+                <label for="input-file">Upload image</label>
+                <input type="file" name="img" accept="image/*" id="input-file" required>
+              </div>
+
+          <div class="form-submit-btn">
+            <button onclick=myFunction() type="submit" class="btn" id="submitButton" value="Submit" >Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+
+      let profilePic = document.getElementById("profile-pic")
+      let inputFile = document.getElementById("input-file")
+
+      inputFile.onchange = function(){
+            profilePic.src = URL.createObjectURL(inputFile.files[0]);
+      }
+
+    </script>
+
+  </body>
+</html>

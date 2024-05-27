@@ -1,0 +1,87 @@
+<!-- CODE FOR DASHBOARD IN  NEW REQUEST FOR sTUDENT-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!--Get your own code at fontawesome.com-->
+    <link rel="stylesheet" href="static/css/admin_dashboard_css/sytleAddfaculty.css">
+    <script src="static/js/admin_dashboard_js/script.js"></script>
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle">
+ {% include 'admin_dashboard/sidebar_template.html' %}
+      <!-- MAIN CONTENT  -->
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                Dashboard
+            </h2>
+        </header>
+     <main>
+        <section class="recent">
+            <div class="activity-card">
+                <div class="card-header">
+                    <h3>Add as Student</h3>
+                    <!-- <button>See all<span class="las la-arrow-right"></span></button> -->
+                </div>
+                <!-- TABLE OF NEW REQUESTED STUDENTS -->
+                <table>
+                    <thead>
+                    <tr>
+                        <th>S No.</th>
+                        <th>Name</th>
+                        <th>Student ID</th>
+                        <th>View</th>
+                        <th>Accept/Deny</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in manage_profile_request_by_student %}
+                    <tr>
+                        <td data-label="S No.">{{ loop.index }}</td>
+                        <td data-label="Name">{{ row.1 }}</td>
+                        <td data-label="Student ID">{{ row.10 }}</td>
+                        <td>
+                            <a href="/viewInsitestudent?StudentID={{ row.10 }}"><i class="fa fa-eye"
+                                                                                   style="font-size:20px"></i></a>
+                        </td>
+                        <td>
+                            <form action="#" method="post">
+                                <input type="hidden" value="{{ row.1 }}" name="fullName">
+                                <input type="hidden" value="{{ row.2 }}" name="FatherName">
+                                <input type="hidden" value="{{ row.3 }}" name="Course">
+                                <input type="hidden" value="{{ row.4 }}" name="Branch">
+                                <input type="hidden" value="{{ row.5 }}" name="Year">
+                                <input type="hidden" value="{{ row.6 }}" name="DOB">
+                                <input type="hidden" value="{{ row.7 }}" name="email_id">
+                                <input type="hidden" value="{{ row.8 }}" name="PhoneNumber">
+                                <input type="hidden" value="{{ row.9 }}" name="gender">
+                                <input type="hidden" value="{{ row.10 }}" name="StudentID">
+                                <input type="hidden" value="admin" name="updated_by">
+                                <input type="hidden" value="{{row.12}}" name="password">
+                                 <button type="submit" id="bbq" class="btn" name="action" value="accept">Accept</button>
+                                <button type="submit"  id="bbq1" class="btn" name="action" value="deny">Deny</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+        </section>
+    </main>
+</div>
+<footer>
+    <!-- footer -->
+</footer> 
+<script src="https://kit.fontawesome.com/09ae4bf049.js" crossorigin="anonymous"></script>
+</body>
+</html>

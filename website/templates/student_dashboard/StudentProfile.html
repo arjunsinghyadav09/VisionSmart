@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="static/css/faculty_dashboard_css/style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/09ae4bf049.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+{% if session.get('StudentID') %}
+  <div class="main">
+    <div class="container">
+
+      <h2>Student Dashboard</h2>
+      <div class="head-bar" id="second-head">
+        <div class="prfile-img">
+          <img src="profile.png" alt="">
+        </div>
+        <div class="navigation-bar">
+          <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse  navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="/student_dash">Home</a>
+                  </li>
+<!--                  <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#">Edit profile</a>-->
+<!--                  </li>-->
+<!--                  <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#">Alerts</a>-->
+<!--                  </li>-->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/timetable_tables">Timetable</a>
+                  </li>
+                </ul>
+                <button type="button" class="mx-2 btn btn-info"><a class="nav-link" href="/password_profile_student">Change Password</a></button>
+                <button type="button" class="btn btn-success" ><a href="/" style="color:white;">Log Out</a></button>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="grid-card">
+        <div class="head-bar" id="third-head">
+          <div class="third-container">
+            <div class="teacher-name-section">
+               <h5 id="teacher-name">Student's Name : &nbsp </h5>
+               <p class="teacher-name-value">{{ session.fullName }} </p>
+            </div>
+            <div class="teacher-id-section">
+              <h5 id="teacher-id"> Student's Id: &nbsp</h5>
+              <p class="teacher-id-value"> {{ session.StudentID }} </p>
+            </div>
+            <div class="teacher-id-section">
+              <h5 id="teacher-id"> Branch: &nbsp</h5>
+              <p class="teacher-id-value">{{ student_data[1] }}</p>
+            </div>
+            <div class="teacher-id-section">
+              <h5 id="teacher-id"> Year: &nbsp</h5>
+              <p class="teacher-id-value">{{ student_data[2] }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-card-bottum">
+        <div class="classes" id="first-head">
+          <h5 class="classes-head">Subject</h5>
+          <div class="list-group list-group-flush list-hover">
+            <strong>
+              {% for data in timetable_data %}
+                <a href="#" class="list-group-item list-group-item-action branch-link" data-branch="{{ data[0]|lower }}">{{ data[1] }}</a>
+              {% endfor %}
+            </strong>
+          </div>
+        </div>
+        <div class="classes" id="first-head">
+          <h5 class="classes-head">Percentage</h5>
+          <div class="list-group list-group-flush list-hover">
+            <strong>
+              {% for data in timetable_data %}
+                <a href="#" class="list-group-item list-group-item-action branch-link" data-branch="{{ data[0]|lower }}">{{ data[0] }}</a>
+              {% endfor %}
+            </strong>
+          </div>
+        </div>
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="static/js/faculty_dashboard_css/app.js"></script>
+  <script src="static/js/branch_select.js"></script>
+  <script src="static/js/student_select.js"></script>
+</body>
+</html>

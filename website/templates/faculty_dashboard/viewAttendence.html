@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Attenden</title>
+    <link rel="stylesheet" href="static/css/faculty_dashboard_css/viewattendence.css">
+
+  </head>
+  <body>
+    <div class="container">
+        <div class="basic-details">
+
+        </div>
+        <div class="student-details">
+            <div class="basic-details">
+                <div id="name-details" class="details-value">
+                    <p class="details">Name: &nbsp;</p>
+                    <p class="hp">{{ student_details[0] }}</p>
+                </div>
+                <div id="branch" class="details-value">
+                    <p class="details">Branch: &nbsp;</p>
+                    <p class="hp">{{ student_details[1] }}</p>
+                </div>
+                <div id="roll-no" class="details-value">
+                    <p class="details">Roll No:&nbsp;</p>
+                    <p class="hp">{{ student_details[2] }}</p>
+                </div>
+            </div>
+            <div class="student-img">
+                    <img id="join-image-preview" src="{{ url_for('static', filename='uploaded/' + student_details[3]) }}" class="image" alt="Student Image">
+            </div>
+        </div>
+        <div class="check-attendence">
+             <table id="attendance-table" border="1">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Attendance</th>
+                    </tr>
+                </thead>
+                <tbody id="attendance-body">
+                    {% for date, attend_status in attendance_data %}
+                    <tr>
+                        <td>{{ date }}</td>
+                        <td>{{ attend_status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </body>
+</html>

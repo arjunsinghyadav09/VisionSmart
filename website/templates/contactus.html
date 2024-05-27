@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <div class="text">Contact Us Form</div>
+        <form action="/contactus" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" name="f_name" required />
+                    <div class="underline"></div>
+                    <label for="">First Name</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" name="l_name" required />
+                    <div class="underline"></div>
+                    <label for="">Last Name</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="email" name="email" required />
+                    <div class="underline"></div>
+                    <label for="">Email Address</label>
+                </div>
+                <div class="input-data">
+                    <input type="tel" pattern="[0-9]{10}" name="mobile" required />
+                    <div class="underline"></div>
+                    <label for="">Mobile No</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-data textarea">
+                    <textarea name="message" rows="8" cols="80" required></textarea>
+                    <br />
+                    <div class="underline"></div>
+                    <label for="">Write your message</label>
+                    <br />
+                </div>
+            </div>
+            <div class="form-row submit-btn">
+                <button class="button-30" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

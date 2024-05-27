@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="static/css/admin_dashboard_css/style.css">
+    <script src="static/js/admin_dashboard_js/script.js"></script>
+</head>
+<body>
+<input type="checkbox" id="nav-toggle">
+ {% include 'admin_dashboard/sidebar_template.html' %}
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="las la-bars"></span>
+            </label>
+            Dashboard
+        </h2>
+        <div class="user-wrapper">
+            <img src="static/img/admin_dashboard_img/LU_Logo-JPG_100220.jpg" width="40px" height="40px" alt="">
+            <div>
+                <h3 style="color: aliceblue;">Admin</h3>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="cards">
+            <div class="card-single">
+                <div>
+                    <a href="/addStudent">
+                    <h1 name="tot_student">{{ num_new_student }}</h1>
+                        <span>New student Request</span></a>
+                </div>
+                <div> <a href="/addStudent">
+                    <span class="las la-users"></span></a>
+                </div>
+            </div>
+            <div class="card-single">
+                <div>
+                    <a href="/addfaculty">
+                    <h1 name="tot_faculty">{{ num_new_faculty }}</h1>
+                    <span>New faculty request</span></a>
+                </div>
+                <div><a href="/addfaculty">
+                    <span class="las la-user"></span></a>
+                </div>
+            </div>
+            <div class="card-single">
+                <div>
+                    <a href="/viewStudent">
+                    <h1 name="StudentId">{{ num_active_student }}</h1>
+                        <span>Active Student</span></a>
+                </div>
+                <div><a href="/viewStudent">
+                    <span class="las la-user"></span></a>
+                </div>
+            </div>
+            <div class="card-single">
+                <div>
+                    <a href="/viewFaculty">
+                    <h1 name="facultyId">{{ num_active_faculty }}</h1>
+                        <span>Active Faculty</span></a>
+                </div>
+                <div><a href="/viewFaculty">
+                    <span class="las la-user"></span></a>
+                </div>
+            </div>
+        </div>
+        <section class="recent">
+            <div class="activity-card">
+                <div class="card-header">
+                    <h3>Recent Activity</h3>
+<!--                    <button>See all<span class="las la-arrow-right"></span></button>-->
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Member</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for activity in recent_activities %}
+                    <tr>
+                        <td>{{ activity[0] }}</td>
+                        <td>{{ activity[1] }}</td>
+                        <td>{{ activity[2] }}</td>
+                        <td>
+                            <span class="badge {{ 'success' if activity[3] == 'Processing' else 'warning' }}">{{ activity[3] }}</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<script src="https://kit.fontawesome.com/09ae4bf049.js" crossorigin="anonymous"></script>
+</body>
+</html>

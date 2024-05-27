@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camera App</title>
+<link rel="stylesheet" href="static/css/faculty_dashboard_css/style.css">
+<style>
+    body{
+        margin: 0px;
+    }
+    #video-container {
+        
+        width: 99vw;
+    }
+
+    #video-container video {
+        width: 99vw;
+        height: 93vh;
+    }
+
+    button {
+        display: block;
+        margin: 0px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div id="video-container">
+    <video id="video" autoplay></video>
+</div>
+<button id="startButton">Open Camera</button>
+<button id="stopButton" style="display:none;">Stop Camera</button>
+
+<script src="script.js"></script>
+<script>
+    let stream;
+startButton.addEventListener('click', async () => {
+    try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+        startButton.style.display = 'none';
+        stopButton.style.display = 'block';
+    } catch (err) {
+        console.error('Error accessing the camera: ', err);
+    }
+});
+
+stopButton.addEventListener('click', () => {
+    if (stream) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
+        video.srcObject = null;
+        stopButton.style.display = 'none';
+        startButton.style.display = 'block';
+    }
+});
+</script>
+</body>
+</html>

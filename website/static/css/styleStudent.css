@@ -1,0 +1,248 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/robot-hand-finger-ai-background-technology-graphics.jpg);
+    background-size: cover;
+}
+
+.container{
+    width: 100%;
+    max-width: 680px;
+    background:linear-gradient(
+        rgb(108, 173, 108),rgb(35, 106, 35));
+    padding: 28px;
+    margin: 15px 28px;
+    border-radius: 10px;
+    box-shadow: inset -2px 2px 2px white;
+}
+
+.glass{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.form-title{
+    font-size: 26px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 6px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    border-bottom: solid 1px white;
+}
+
+.main-user-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.user-input-box:nth-child(2n){
+    justify-content: end;
+}
+
+.user-input-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+}
+
+.user-input-box label{
+    width: 95%;
+    color: white;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 450;
+    margin: 5px 0;
+}
+
+.user-input-box input{
+    height: 40px;
+    width: 95%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+}
+#gender-name{
+color : white;
+font-weight: bolder;
+font-size: 1.1rem
+}
+.gender-details-box{
+margin: 0px 0px 10px 0px;
+}
+select{
+    height: 40px;
+    width: 95%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+}
+.gender-title{
+    color:white;
+    font-size: 18px;
+    font-weight: 550;
+    border-bottom: 1px solid white;
+}
+
+.gender-category{
+    margin: 15px ;
+    color: white;
+}
+
+.gender-category label{
+    padding: 0 20px 0 5px;
+}
+
+.gender-category label,
+.gender-category input,
+.form-submit-btn input{
+    cursor: pointer;
+}
+
+.image-Insert{
+    display: flex;
+    flex-wrap: wrap;
+}
+.image-Insert img{
+    display: flex;
+    flex-wrap: wrap;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 10px;
+
+}
+.image-Insert input{
+    display: none;
+}
+.image-Insert label{
+    display: flex;
+    flex-wrap: wrap;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 50px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.image-Insert label:hover{
+    background-color: #fff;
+    color: gray;
+}
+.user-input-Student input{
+    height: 40px;
+    width: 45%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+}
+.user-input-Student label{
+    width: 95%;
+    display: flex;
+    color: white;
+    font-size: 15px;
+    font-weight: 450;
+    margin: 5px 0;
+}
+
+
+
+@media(max-width: 600px){
+    .container{
+        min-width: 280px;
+    }
+
+    .user-input-box{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .user-input-box:nth-child(2n){
+        justify-content: space-between;
+    }
+
+    .gender-category{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .main-user-info{
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .main-user-info::-webkit-scrollbar{
+        width: 0;
+    }
+}
+.btn {
+    width: 40%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-decoration-break: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+    margin-left: 30%;
+    margin-top: 5%;
+  }
+.btn:hover{
+    background: transparent;
+    border: 3px solid white;
+    color: #fff;
+}
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.flash-message.success {
+    background-color: #4CAF50;
+}
+
+.flash-message.error {
+    background-color: #f44336;
+}
+
+.flash-message.warning {
+    background-color: #ff9800;
+}
+
+.flash-message.info {
+    background-color: #2196F3;
+}

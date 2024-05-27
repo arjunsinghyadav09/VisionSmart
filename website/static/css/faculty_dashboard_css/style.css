@@ -1,0 +1,384 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+  background-color: #151e24;
+}
+
+.profile-img {
+  float: left;
+}
+.container img {
+  height: 100vh;
+  width: 100vw;
+  /* background-size: contain; */
+  opacity: 0.4;
+  position: absolute;
+  z-index: -10;
+}
+
+@media screen and (max-width: 490px) {
+  .container img {
+    height: 110vh;
+  }
+}
+
+#second-head img {
+  height: 8vh;
+  width: 4vw;
+  cursor: pointer;
+}
+
+.head-bar {
+  background-color: #212d35;
+  color: #1253a1;
+  box-shadow: 4px 4px 10px rgba(26, 101, 147, 0.5);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.head-bar img {
+  position: relative;
+
+}
+
+.navigation-bar {
+  position: relative;
+
+}
+
+.navbar-toggler {
+  background-color: #3f7a7e;
+}
+
+.nav-link {
+  color: #dbe4f1;
+}
+
+.main {
+  /* max-width: 100vw; */
+  margin: 0px;
+  object-fit: contain;
+}
+
+.grid-card {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 50px 15px 50px 0px;
+}
+
+@media screen and (max-width: 640px) {
+  .grid-card {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-card {
+    display: grid;
+    grid-template-columns: auto;
+
+  }
+}
+
+.grid-card-bottum {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media screen and (max-width:380px) {
+  .grid-card-bottum {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+  }
+}
+
+.container {
+  background-color: #151e24;
+  color: #1253a1;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 10px;
+  /* height: 100vh; */
+  max-width: 100vw;
+}
+
+.container h2 {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  text-align: center;
+  font-size: 3.2rem;
+  padding: 25px 0px 25px 0px;
+}
+
+.navbar {
+  margin-left: 4rem;
+}
+
+#first-head {
+  background-color: #212d35;
+  margin-right: 20px;
+  color: #FFFFFF;
+  padding: 36px;
+  box-shadow: 4px 4px 10px rgba(26, 101, 147, 0.5);
+}
+
+.classes-head {
+  border-bottom: 2px solid whitesmoke;
+  font-size: xx-large;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  color: #00DDEB;
+}
+
+#second-head {
+  background-color: #212d35;
+  color: #ededed;
+  display: ruby-text;
+  font-size: larger;
+  font-weight: 530;
+}
+
+@media screen and (max-width: 990px) {
+  .collapse {
+    background-color: rgb(61, 73, 101, 0.5);
+    border-radius: 15px;
+    padding: 10px;
+  }
+}
+
+#third-head {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.third-container {
+  color: white;
+}
+
+#fourth-head {
+  display: flex;
+  flex-direction: column;
+  background-color: #212d35;
+  color: #ededed;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+}
+
+#fifth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sub {
+  color: #00DDEB;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+#subjects {
+  color: white;
+  padding: 7px;
+  border-radius: 8px;
+  background: transparent;
+}
+
+#subjects option {
+  background-color: #212d35;
+}
+
+.list-group-item {
+  border: 0;
+  color: white;
+}
+
+.discription-bar {
+  border-radius: 5px;
+  background-color: #212d35;
+  color: #fffffa;
+  max-height: 100vh;
+  height: auto;
+  overflow: scroll;
+}
+
+.cse-ai {
+  position: absolute;
+}
+
+.cse- {
+  position: absolute;
+}
+
+table {
+  font-family: arial, sans-serif;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  margin-top: 6px;
+}
+
+td,
+th {
+  text-align: center;
+  padding: 8px;
+}
+
+table button{
+  padding: 5px 8px 5px 8px;
+  border: #00DDEB;
+  border-radius: 40px;
+}
+table button a{
+  text-decoration: none
+}
+table button a:hover{
+  color: white;
+  text-decoration: none
+}
+table button:hover{
+  background-color: #324142;
+}
+tr:nth-child(even) {
+  background-color: #e0c5c5;
+  /* background-color: #212d35; */
+  color: #341b1b;
+}
+
+table td {
+  border: 2px solid rgb(19, 0, 0);
+}
+
+/* table tr:first-child td {
+  border-top: 0;
+} */
+table tr td:first-child {
+  border-left: 0;
+}
+
+table tr:last-child td {
+  border-bottom: 0;
+}
+
+table tr td:last-child {
+  border-right: 0;
+}
+
+.teacher-name-section {
+  display: flex;
+  font-family: 'poppins', sans-serif;
+  font-size: large;
+}
+
+.teacher-id-section {
+  display: flex;
+  font-family: 'poppins', sans-serif;
+  font-size: large;
+}
+
+#teacher-id {
+  font-size: x-large;
+  color: #00DDEB;
+  font-family: 'poppins', sans-serif;
+  font-weight: 700;
+}
+
+#teacher-name {
+  font-size: x-large;
+  font-weight: 700;
+  font-family: 'poppins', sans-serif;
+  color: #00DDEB;
+}
+
+.list-group-item {
+  background: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.text a {
+  text-decoration: none;
+  color: white;
+
+}
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 10px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 20px;
+    min-width: 150px;
+  }
+}
+
+/* Camera Css */
+
+#video-container {
+
+  width: 99vw;
+}
+
+#video-container video {
+  width: 99vw;
+  height: 99vh;
+}
+
+.camera-btn {
+  display: block;
+  margin: 0px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
